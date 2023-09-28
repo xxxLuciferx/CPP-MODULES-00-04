@@ -16,25 +16,29 @@
 
 #include <iostream>
 
-class contact
+class	Contact
 {
-    private:
-    std::string FirstName;
-    std::string LastName;
-    std::string NickName;
-    std::string PhoneNumber;
-    std::string DarkestSecret;
-    
+	std::string FirstName;
+	std::string LastName;
+	std::string NickName;
+	std::string DarkestSecret;
+	std::string PhoneNumber;
+
     public:
-    contact();
-    ~contact();
-    void    addContact();
-    std::string FirstName();
-    std::string LastName();
-    std::string NickName();
-    std::string PhoneNumber();
-    std::string DarkestSecret();
-    
+        int    SetFirstName();
+        int    SetLastName();
+        int    SetNickName();
+        int    SetDarkestSecret();
+        int    SetPhoneNumber();
 };
+
+class   PhoneBook{
+    Contact Contacts[8];
+    public:
+        void    SetContact(Contact obj);
+};
+
+
+
 
 #endif
