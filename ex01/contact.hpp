@@ -1,53 +1,36 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: yichiba <yichiba@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/29 14:28:37 by yichiba           #+#    #+#             */
-/*   Updated: 2023/09/29 15:02:24 by yichiba          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#ifndef CONTACT_H
+# define CONTACT_H
 
+# include <string>
 
-
-
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
-
-#include <iostream>
-#include <string>
-
-class	Contact
+class Contact
 {
-	std::string FirstName;
-	std::string LastName;
-	std::string NickName;
-	std::string DarkestSecret;
-	std::string PhoneNumber;
+public:
 
-    public:
-        int             SetFirstName();
-        int             SetLastName();
-        int             SetNickName();
-        int             SetDarkestSecret();
-        int             SetPhoneNumber();
-        std::string     getFirstName();
-        std::string     getLastName();
-        std::string     getNickName();
-        std::string     getDarkestSecret();
-        std::string     getPhoneNumber();
+	Contact();
+	~Contact();
+
+	// Getters
+	std::string getFirstName() const;
+	std::string getLastName() const;
+	std::string getNickName() const;
+	std::string	getPhoneNumber() const;
+	std::string getSecret() const;
+	
+	//Setters
+	void setFirstName(std::string name);
+	void setLastName(std::string name);
+	void setNickName(std::string name);
+	void setPhoneNumber(std::string number);
+	void setSecret(std::string secret);
+	
+private:
+
+	std::string _firstName;
+	std::string _lastName;
+	std::string _nickName;
+	std::string	_phoneNumber;
+	std::string	_secret;
 };
-
-class   PhoneBook{
-    Contact Contacts[8];
-    public:
-        void    SetContact(Contact obj, int i);
-        Contact getContacts(int i);
-};
-
-
-
 
 #endif
