@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: khaimer <khaimer@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/06 11:00:02 by khaimer           #+#    #+#             */
+/*   Updated: 2023/10/06 15:11:47 by khaimer          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Phonebook.hpp"
 
 Phonebook::Phonebook()
@@ -23,10 +35,13 @@ int	Phonebook::getCount() const
 
 void Phonebook::setContact(Contact contact)
 {
-	this->_contacts[this->_index] = contact;
-	_count = (_count < 8) ? _count + 1 : _count;
-	this->_index = (this->_index + 1) % 8;
-	return;
+    this->_contacts[this->_index] = contact;
+    if (_count < 8) {
+        _count++;
+    } else {
+        _count = 8; // Ensure _count doesn't exceed 8
+    }
+    this->_index = (this->_index + 1) % 8;
 }
 
 int Phonebook::_count = 0;

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   contact.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: khaimer <khaimer@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/06 10:59:34 by khaimer           #+#    #+#             */
+/*   Updated: 2023/10/06 15:14:04 by khaimer          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Contact.hpp"
 
 Contact::Contact()
@@ -10,27 +22,27 @@ Contact::~Contact()
 	return;
 }
 
-std::string Contact::getFirstName() const
+std::string Contact::getFirstName()
 {
 	return this->_firstName;
 }
 
-std::string Contact::getLastName() const
+std::string Contact::getLastName()
 {
 	return this->_lastName;
 }
 
-std::string Contact::getNickName() const
+std::string Contact::getNickName()
 {
 	return this->_nickName;
 }
 
-std::string Contact::getPhoneNumber() const
+std::string Contact::getPhoneNumber()
 {
 	return this->_phoneNumber;
 }
 
-std::string Contact::getSecret() const
+std::string Contact::getSecret()
 {
 	return this->_secret;
 }

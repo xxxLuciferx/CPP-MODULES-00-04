@@ -10,14 +10,13 @@ public:
 	Contact();
 	~Contact();
 
-	// Getters
-	std::string getFirstName() const;
-	std::string getLastName() const;
-	std::string getNickName() const;
-	std::string	getPhoneNumber() const;
-	std::string getSecret() const;
+	std::string getFirstName();
+	std::string getLastName();
+	std::string getNickName();
+	std::string	getPhoneNumber();
+	std::string getSecret();
 	
-	//Setters
+
 	void setFirstName(std::string name);
 	void setLastName(std::string name);
 	void setNickName(std::string name);

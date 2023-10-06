@@ -1,28 +1,38 @@
-#include "Phonebook.hpp"
-#include <iostream>
-#include <iomanip>
-#include <limits>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: khaimer <khaimer@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/06 10:59:47 by khaimer           #+#    #+#             */
+/*   Updated: 2023/10/06 12:50:28 by khaimer          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void addContact(Phonebook *phonebook)
+
+#include "Phonebook.hpp"
+
+void newContact(Phonebook *phonebook)
 {
 	Contact 	contact;
-	std::string str;
+	std::string line;
 
-	std::cout << "First name: ";
-	std::getline(std::cin, str);
-	contact.setFirstName(str);
-	std::cout << "Last name: ";
-	std::getline(std::cin, str);
-	contact.setLastName(str);
-	std::cout << "Nickname: ";
-	std::getline(std::cin, str);
-	contact.setNickName(str);
-	std::cout << "Phone number: ";
-	std::getline(std::cin, str);
-	contact.setPhoneNumber(str);
-	std::cout << "Darkest secret: ";
-	std::getline(std::cin, str);
-	contact.setSecret(str);
+	std::cout << "> First name: ";
+	std::getline(std::cin, line);
+	contact.setFirstName(line);
+	std::cout << "> Last name: ";
+	std::getline(std::cin, line);
+	contact.setLastName(line);
+	std::cout << "> Nickname: ";
+	std::getline(std::cin, line);
+	contact.setNickName(line);
+	std::cout << "> Phone number: ";
+	std::getline(std::cin, line);
+	contact.setPhoneNumber(line);
+	std::cout << "> Darkest secret: ";
+	std::getline(std::cin, line);
+	contact.setSecret(line);
 	phonebook->setContact(contact);
 }
 
@@ -45,7 +55,7 @@ void searchContact(Phonebook *phonebook)
 	std::cout << "│" << std::setw(10) << std::right << "last name";
 	std::cout << "│" << std::setw(10) << std::right << "nickname" << "│" << std::endl;
 	std::cout << "├──────────┼──────────┼──────────┼──────────┤" << std::endl;
-	for (int i=0; i < phonebook->getCount(); i++)
+	for (int i = 0; i < phonebook->getCount(); i++)
 	{
 		Contact contact;
 		contact = phonebook->getContact(i);
@@ -85,24 +95,24 @@ int main()
 {
 	Phonebook phonebook;
 
-	std::cout << "Command info: " << std::endl;
-	std::cout << " -ADD: add a contact to the phonebook" << std::endl;
-	std::cout << " -SEARCH: search for a contact in the phonebook" << std::endl;
-	std::cout << " -EXIT: quit the program" << std::endl;
+	std::cout << std::endl << "Available Commands: " << std::endl;
+	std::cout << " * ADD: add a contact to your phonebook" << std::endl;
+	std::cout << " * SEARCH: search for a contact in your phonebook" << std::endl;
+	std::cout << " * EXIT: leave the program" << std::endl;
 	while (1)
 	{
-		std::string command;
-		std::cout << std::endl << "Enter a command: ";
-		std::getline(std::cin, command);
-		if (command == "ADD")
+		std::string input;
+		std::cout << std::endl << "Enter a command: " << std::endl << ">  ";
+		std::getline(std::cin, input);
+		if (input == "ADD")
 		{
-			addContact(&phonebook);
+			newContact(&phonebook);
 		}
-		else if (command == "SEARCH")
+		else if (input == "SEARCH")
 		{
 			searchContact(&phonebook);
 		}
-		else if (command == "EXIT" )
+		else if (input == "EXIT")
 		{
 			break;
 		}
