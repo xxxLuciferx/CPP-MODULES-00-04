@@ -100,6 +100,10 @@ void searchContact(Phonebook *phonebook)
 		std::cout << "Please enter an index for relevant information: ";
 		while (!(std::cin >> index) || index > count || index < 1)
 		{
+			if (std::cin.eof())
+			{
+				return;
+			}
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //SOULD BE FIXEEED
 			std::cout << "Invalid input, Please enter an index between 1 and " << count << ": ";
