@@ -6,7 +6,7 @@
 /*   By: khaimer <khaimer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 10:59:34 by khaimer           #+#    #+#             */
-/*   Updated: 2023/10/06 15:14:04 by khaimer          ###   ########.fr       */
+/*   Updated: 2023/10/06 15:21:39 by khaimer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,55 +24,55 @@ Contact::~Contact()
 
 std::string Contact::getFirstName()
 {
-	return this->_firstName;
+	return this->C_firstName;
 }
 
 std::string Contact::getLastName()
 {
-	return this->_lastName;
+	return this->C_lastName;
 }
 
 std::string Contact::getNickName()
 {
-	return this->_nickName;
+	return this->C_nickName;
 }
 
 std::string Contact::getPhoneNumber()
 {
-	return this->_phoneNumber;
+	return this->C_phoneNumber;
 }
 
 std::string Contact::getSecret()
 {
-	return this->_secret;
+	return this->C_secret;
 }
 
-void Contact::setFirstName(std::string name)
+void Contact::setFirstName(std::string Fname)
 {
-	this->_firstName = name;
+	this->C_firstName = Fname;
 	return;
 }
 
-void Contact::setLastName(std::string name)
+void Contact::setLastName(std::string Lname)
 {
-	this->_lastName = name;
+	this->C_lastName = Lname;
 	return;
 }
 
-void Contact::setNickName(std::string name)
+void Contact::setNickName(std::string Nname)
 {
-	this->_nickName = name;
+	this->C_nickName = Nname;
 	return;
 }
 
 void Contact::setPhoneNumber(std::string number)
 {
-	this->_phoneNumber = number;
+	this->C_phoneNumber = number;
 	return;
 }
 
 void Contact::setSecret(std::string secret)
 {
-	this->_secret = secret;
+	this->C_secret = secret;
 	return;
 }

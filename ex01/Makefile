@@ -1,4 +1,4 @@
-NAME		=	Phonebook
+NAME		=	Agenda
 
 CC			=	c++
 

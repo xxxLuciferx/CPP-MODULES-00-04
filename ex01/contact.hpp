@@ -5,8 +5,14 @@
 
 class Contact
 {
-public:
 
+	std::string C_firstName;
+	std::string C_lastName;
+	std::string C_nickName;
+	std::string	C_phoneNumber;
+	std::string	C_secret;
+
+public:
 	Contact();
 	~Contact();
 
@@ -23,13 +29,6 @@ public:
 	void setPhoneNumber(std::string number);
 	void setSecret(std::string secret);
 	
-private:
-
-	std::string _firstName;
-	std::string _lastName;
-	std::string _nickName;
-	std::string	_phoneNumber;
-	std::string	_secret;
 };
 
 #endif

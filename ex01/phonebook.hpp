@@ -11,14 +11,14 @@ class Phonebook
 public:
 	Phonebook();
 	~Phonebook();
-	Contact getContact(int index) const;
-	int		getCount() const;
+	Contact getContact(int index);
+	int		getCounter();
 	void setContact(Contact contact);
 
 private:
-	static int		_count;
-	Contact _contacts[8];
-	int		_index;
+	Contact contacts[8];
+	static int		count;
+	int		index;
 };
 
 #endif

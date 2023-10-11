@@ -6,42 +6,44 @@
 /*   By: khaimer <khaimer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 11:00:02 by khaimer           #+#    #+#             */
-/*   Updated: 2023/10/06 15:11:47 by khaimer          ###   ########.fr       */
+/*   Updated: 2023/10/11 01:43:12 by khaimer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
 
 Phonebook::Phonebook()
-: _index(0)
 {
-	return;
+	index = 0;
+	std::cout << "| Welcome to phonebook!|" << std::endl ;
+	std::cout << "└----------------------┘" << std::endl;
 }
 
 Phonebook::~Phonebook()
 {
+	std::cout << "|Phonebook closed|" << std::endl;
+	std::cout << "└----------------┘" << std::endl;
 	return;
 }
 
-Contact Phonebook::getContact(int index) const
+Contact Phonebook::getContact(int index)
 {
-	return this->_contacts[index];
+	return this->contacts[index];
 }
 
-int	Phonebook::getCount() const
+int	Phonebook::getCounter()
 {
-	return this->_count;
+	return this->count;
 }
 
 void Phonebook::setContact(Contact contact)
 {
-    this->_contacts[this->_index] = contact;
-    if (_count < 8) {
-        _count++;
-    } else {
-        _count = 8; // Ensure _count doesn't exceed 8
+    this->contacts[this->index] = contact;
+    if (count < 8)
+	{
+        count++;
     }
-    this->_index = (this->_index + 1) % 8;
+    this->index = (this->index + 1) % 8;
 }
 
-int Phonebook::_count = 0;
+int Phonebook::count = 0;

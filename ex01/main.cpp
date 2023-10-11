@@ -6,7 +6,7 @@
 /*   By: khaimer <khaimer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 10:59:47 by khaimer           #+#    #+#             */
-/*   Updated: 2023/10/06 12:50:28 by khaimer          ###   ########.fr       */
+/*   Updated: 2023/10/11 01:09:28 by khaimer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,53 @@
 
 void newContact(Phonebook *phonebook)
 {
-	Contact 	contact;
-	std::string line;
+    Contact contact;
+    std::string line;
 
-	std::cout << "> First name: ";
-	std::getline(std::cin, line);
-	contact.setFirstName(line);
-	std::cout << "> Last name: ";
-	std::getline(std::cin, line);
-	contact.setLastName(line);
-	std::cout << "> Nickname: ";
-	std::getline(std::cin, line);
-	contact.setNickName(line);
-	std::cout << "> Phone number: ";
-	std::getline(std::cin, line);
-	contact.setPhoneNumber(line);
-	std::cout << "> Darkest secret: ";
-	std::getline(std::cin, line);
-	contact.setSecret(line);
-	phonebook->setContact(contact);
+    std::cout << "> First name: " << std::endl;
+    std::getline(std::cin, line);
+    if (line.empty())
+	{
+        std::cout << "First name cannot be empty, Please retry :" << std::endl;
+        return;
+    }
+    contact.setFirstName(line);
+
+    std::cout << "> Last name: " << std::endl;
+    std::getline(std::cin, line);
+    if (line.empty()) {
+        std::cout << "Last name cannot be empty, Please retry :" << std::endl;
+        return;
+    }
+    contact.setLastName(line);
+
+    std::cout << "> Nickname: " << std::endl;
+    std::getline(std::cin, line);
+    if (line.empty()) {
+        std::cout << "Nickname cannot be empty, Please retry :" << std::endl;
+        return;
+    }
+    contact.setNickName(line);
+
+    std::cout << "> Phone number: " << std::endl;
+    std::getline(std::cin, line);
+    if (line.empty()) {
+        std::cout << "Phone number cannot be empty, Please retry :" << std::endl;
+        return;
+    }
+    contact.setPhoneNumber(line);
+
+    std::cout << "> Darkest secret: " << std::endl;
+    std::getline(std::cin, line);
+    if (line.empty()) {
+        std::cout << "Darkest secret cannot be empty, Please retry :" << std::endl;
+        return;
+    }
+    contact.setSecret(line);
+
+    phonebook->setContact(contact);
 }
+
 
 std::string truncate(std::string str)
 {
@@ -48,14 +75,15 @@ void searchContact(Phonebook *phonebook)
 	int index;
 	int count;
 
-	count = phonebook->getCount();
-	std::cout << "┌──────────┬──────────┬──────────┬──────────┐" << std::endl;
+	count = phonebook->getCounter();
+	std::cout << std::endl;
+	std::cout << std::endl;
 	std::cout << "│" << std::setw(10) << std::right << "index";
 	std::cout << "│" << std::setw(10) << std::right << "first name";
 	std::cout << "│" << std::setw(10) << std::right << "last name";
 	std::cout << "│" << std::setw(10) << std::right << "nickname" << "│" << std::endl;
-	std::cout << "├──────────┼──────────┼──────────┼──────────┤" << std::endl;
-	for (int i = 0; i < phonebook->getCount(); i++)
+	std::cout << "└──────────|──────────|──────────|──────────┘" << std::endl;
+	for (int i = 0; i < phonebook->getCounter(); i++)
 	{
 		Contact contact;
 		contact = phonebook->getContact(i);
@@ -72,21 +100,21 @@ void searchContact(Phonebook *phonebook)
 		{
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-			std::cout << "Invalid input. Please enter an index between 1 and " << count << ": ";
+			std::cout << "Invalid input, Please enter an index between 1 and " << count << ": ";
 		}
 		index--;
 		Contact tmp;
 		tmp = phonebook->getContact(index);
 		std::cout << std::endl;
-		std::cout << "First name - " << tmp.getFirstName() << std::endl;
-		std::cout << "Last name - " << tmp.getLastName() << std::endl;
-		std::cout << "Nickname - " << tmp.getNickName() << std::endl;
-		std::cout << "Phone number - " << tmp.getPhoneNumber() << std::endl;
-		std::cout << "Darkest secret - " << tmp.getSecret() << std::endl;
+		std::cout << "First name : " << tmp.getFirstName() << std::endl;
+		std::cout << "Last name : " << tmp.getLastName() << std::endl;
+		std::cout << "Nickname : " << tmp.getNickName() << std::endl;
+		std::cout << "Phone number : " << tmp.getPhoneNumber() << std::endl;
+		std::cout << "Darkest secret : " << tmp.getSecret() << std::endl;
 	}
 	else
 	{
-		std::cout << "Table is empty!" << std::endl;
+		std::cout << "Your table is empty." << std::endl;
 	}
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
@@ -112,9 +140,10 @@ int main()
 		{
 			searchContact(&phonebook);
 		}
-		else if (input == "EXIT")
+		else if (input == "EXIT" || std::cin.eof())
 		{
 			break;
 		}
+
 	}
 }
