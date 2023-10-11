@@ -63,9 +63,9 @@ void newContact(Phonebook *phonebook)
 }
 
 
-std::string truncate(std::string str)
+std::string cut(std::string str)
 {
-	if (str.size() >= 10)
+	if (str.size() > 9)
 		return (str.substr(0, 9) + ".");
 	return (str);
 }
@@ -74,6 +74,7 @@ void searchContact(Phonebook *phonebook)
 {
 	int index;
 	int count;
+	int	i = 0;
 
 	count = phonebook->getCounter();
 	std::cout << std::endl;
@@ -83,14 +84,15 @@ void searchContact(Phonebook *phonebook)
 	std::cout << "│" << std::setw(10) << std::right << "last name";
 	std::cout << "│" << std::setw(10) << std::right << "nickname" << "│" << std::endl;
 	std::cout << "└──────────|──────────|──────────|──────────┘" << std::endl;
-	for (int i = 0; i < phonebook->getCounter(); i++)
+	while (i < count)
 	{
 		Contact contact;
 		contact = phonebook->getContact(i);
 		std::cout << "|" << std::setw(10) << i + 1;
-		std::cout << "|" << std::setw(10) << truncate(contact.getFirstName());
-		std::cout << "|" << std::setw(10) << truncate(contact.getLastName());
-		std::cout << "|" << std::setw(10) << truncate(contact.getNickName()) << "|" << std::endl;
+		std::cout << "|" << std::setw(10) << cut(contact.getFirstName());
+		std::cout << "|" << std::setw(10) << cut(contact.getLastName());
+		std::cout << "|" << std::setw(10) << cut(contact.getNickName()) << "|" << std::endl;
+		i++;
 	}
 	std::cout << "└──────────┴──────────┴──────────┴──────────┘" << std::endl;
 	if (count > 0)
@@ -99,7 +101,7 @@ void searchContact(Phonebook *phonebook)
 		while (!(std::cin >> index) || index > count || index < 1)
 		{
 			std::cin.clear();
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //SOULD BE FIXEEED
 			std::cout << "Invalid input, Please enter an index between 1 and " << count << ": ";
 		}
 		index--;
