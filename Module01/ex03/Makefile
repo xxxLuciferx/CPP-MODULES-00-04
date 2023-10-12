@@ -6,7 +6,7 @@ CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 
 RM = rm -rf
 
-SRCS = main.cpp Weapon.cpp HumainA.cpp HumainB.cpp
+SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
 OBJS = $(SRCS:%.cpp=%.o)
 
