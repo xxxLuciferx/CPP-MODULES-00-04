@@ -1,16 +1,12 @@
-#include <iostream>
-#include <fstream>
-#include <string>
 
+#include "filter.hpp"
 
 int main(int ac, char **av)
 {
-    std::string document;
-    std::string line;
-
     if (ac == 4)
     {
-         filter();
+        filter(av);
+         
     }
     else
         std::cout << "Invalid Arguments." << std::endl;

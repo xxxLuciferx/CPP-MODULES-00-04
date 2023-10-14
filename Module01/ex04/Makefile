@@ -1,4 +1,4 @@
-NAME = filter
+NAME = replace
 
 CC = c++
 

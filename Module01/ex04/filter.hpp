@@ -3,6 +3,9 @@
 
 
 #include <iostream>
+#include <fstream>
+#include <string>
 
+void    filter(char **av);
 
 #endif
