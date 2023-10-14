@@ -12,11 +12,10 @@
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon a)
+HumanA::HumanA(std::string name, Weapon &a)
 {
-    name = "\0";
-    this->name = "KHALIL";
-    this->WeaponA = a;
+    this->name = name;
+    this->WeaponA = &a;
 }
 
 HumanA::~HumanA()
@@ -26,5 +25,5 @@ HumanA::~HumanA()
 
 void    HumanA::attack()
 {
-    std::cout << this->name << " attacks with their " << std::endl;
+    std::cout << this->name << " attacks with their " << this->WeaponA->getType() <<  std::endl;
 }

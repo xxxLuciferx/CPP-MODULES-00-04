@@ -20,6 +20,8 @@ Weapon::Weapon()
 Weapon::Weapon(std::string name)
 {
     this->type = name;
+    // std::cout << this->type << std::endl;
+    // std::cout << "Weapon created" << std::endl;
 }
 
 Weapon::~Weapon()

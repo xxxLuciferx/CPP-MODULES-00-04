@@ -8,9 +8,9 @@ class HumanA
 {
     private:
         std::string name;
-        Weapon WeaponA;
+        Weapon *WeaponA;
     public:
-        HumanA(std::string name, Weapon a);
+        HumanA(std::string name, Weapon& a);
         ~HumanA();
         void    attack();
 };
