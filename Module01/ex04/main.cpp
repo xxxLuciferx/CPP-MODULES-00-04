@@ -2,20 +2,17 @@
 #include <fstream>
 #include <string>
 
-int main()
+
+int main(int ac, char **av)
 {
-    std::ifstream inputFile("c.txt");
-    if (!inputFile.is_open()) 
-    {
-        std::cout << "File not found or couldn't be opened." << std::endl;
-        return 1;
-    }
-    std::string content;
+    std::string document;
     std::string line;
-    while (std::getline(inputFile, line)) 
+
+    if (ac == 4)
     {
-        line.find
-        content += line + "\n";
+         filter();
     }
-    std::cout << content << std::endl;
+    else
+        std::cout << "Invalid Arguments." << std::endl;
+    return 0;
 }
