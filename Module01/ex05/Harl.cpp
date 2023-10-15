@@ -6,7 +6,7 @@
 /*   By: khaimer <khaimer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 08:55:39 by khaimer           #+#    #+#             */
-/*   Updated: 2023/10/15 12:30:55 by khaimer          ###   ########.fr       */
+/*   Updated: 2023/10/15 13:00:15 by khaimer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,17 +44,17 @@ void Harl::error()
 
 void	Harl::complain(std::string level)
 {
-	std::string tab[4] = {"DEBUG","INFO","WARNING","ERROR"};
-	int i = 0;
-	void (Harl::* p_debug)(void)= &Harl::debug;
-	void (Harl::* p_info)(void)= &Harl::info;
-	void (Harl::* p_warning)(void)= &Harl::warning;
-	void (Harl::* p_error)(void)= &Harl::error;
-	void (Harl::*ptrs[4])() = {p_debug,p_info,p_warning,p_error};
-	while(i < 4)
-	{
-		if(level == tab[i])
-			(this->*ptrs[i])();
-		i++;
-	}
+	std::string arr[4] = {"DEBUG","INFO","WARNING","ERROR"};
+    
+	void (Harl::* p_debug)()= &Harl::debug;
+	void (Harl::* p_info)()= &Harl::info;
+	void (Harl::* p_warning)()= &Harl::warning;
+	void (Harl::* p_error)()= &Harl::error;
+    
+	void (Harl::*pointers[4])() = {p_debug,p_info,p_warning,p_error};
+	for (int i = 0; i < 4; i++)
+    {
+        if(level == arr[i])
+			(this->*pointers[i])();
+    }
 }
