@@ -1,4 +1,4 @@
-NAME = war
+NAME = harl
 
 CC = c++
 
@@ -6,7 +6,7 @@ CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 
 RM = rm -rf
 
-SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRCS = main.cpp Harl.cpp
 
 OBJS = $(SRCS:%.cpp=%.o)
 
