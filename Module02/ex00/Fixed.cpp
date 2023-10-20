@@ -6,7 +6,7 @@
 /*   By: khaimer <khaimer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 15:36:21 by khaimer           #+#    #+#             */
-/*   Updated: 2023/10/18 14:24:19 by khaimer          ###   ########.fr       */
+/*   Updated: 2023/10/19 13:10:58 by khaimer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 Fixed::Fixed()
 {
-    std::cout << "Default constructor called" << std::endl;
     this->Value = 0;
+    std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &fixed)
