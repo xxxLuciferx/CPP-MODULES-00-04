@@ -9,8 +9,11 @@ class Fixed {
         int Value;
         static const int Bits = 8;
     public:
-        Fixed();
-        Fixed(const Fixed &fixed);
+        Fixed(); //OLD
+        Fixed(const Fixed &fixed); //OLD
+
+        Fixed &operator=(const Fixed &fixed); //OLD
+
 
         Fixed(int const Valeur_int); //NEW
         Fixed(float const Valeur_float);//NEW
@@ -18,12 +21,12 @@ class Fixed {
         float toFloat() const; //NEW
         int toInt() const; //NEW
 
-        friend std::ostream& operator<<(std::ostream &out, const Fixed &fixed);
+        friend std::ostream& operator<<(std::ostream &out, const Fixed &fixed); //overload
         
-        void setRawBits(int const raw); // NEW
-        int getRawBits() const; // NEW
+        void setRawBits(int const raw); //OLD
+        int getRawBits() const; //OLD
         
-        ~Fixed();
+        ~Fixed(); //OLD
 };
 
 #endif
