@@ -5,21 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: khaimer <khaimer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 15:37:39 by khaimer           #+#    #+#             */
-/*   Updated: 2023/10/29 03:39:16 by khaimer          ###   ########.fr       */
+/*   Created: 2023/10/31 21:35:26 by khaimer           #+#    #+#             */
+/*   Updated: 2023/10/31 21:35:27 by khaimer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
-
-int main()
-{
-    Fixed a;
-    Fixed b(a);
-    Fixed c;
-    c = b;
-    std::cout << a.getRawBits() << std::endl;
-    std::cout << b.getRawBits() << std::endl;
-    std::cout << c.getRawBits() << std::endl;
-    return 0;
-}
