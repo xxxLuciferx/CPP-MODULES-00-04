@@ -6,7 +6,7 @@
 /*   By: khaimer <khaimer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 21:35:23 by khaimer           #+#    #+#             */
-/*   Updated: 2023/11/01 15:26:51 by khaimer          ###   ########.fr       */
+/*   Updated: 2023/11/01 23:13:48 by khaimer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class Fixed
         
         ~Fixed(); //OLD
 
-        bool operator>(const Fixed &second);
+        bool operator>(const Fixed &second) const;
         bool operator<(const Fixed &second) const;
         bool operator>=(const Fixed &second) const;
         bool operator<=(const Fixed &second) const;
@@ -57,10 +57,10 @@ class Fixed
         Fixed& operator--();  
         Fixed operator--(int);
 
-        static Fixed& min(Fixed &a, Fixed &b);                         // Takes two references on fixed-point numbers
-        static const Fixed& min(const Fixed &a, const Fixed &b);       // Takes two references to constant fixed-point numbers
-        static Fixed& max(Fixed &a, Fixed &b);                         // Takes two references on fixed-point numbers
-        static const Fixed& max(const Fixed &a, const Fixed &b);
+        static Fixed &min(Fixed &a, Fixed &b);
+        static const Fixed &min(const Fixed &a, const Fixed &b);
+        static Fixed &max(Fixed &a, Fixed &b);
+        static const Fixed &max(const Fixed &a, const Fixed &b);
 
 };
 std::ostream& operator<<(std::ostream &out, const Fixed &fixed); //overload

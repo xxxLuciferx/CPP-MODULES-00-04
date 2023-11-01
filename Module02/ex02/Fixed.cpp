@@ -6,7 +6,7 @@
 /*   By: khaimer <khaimer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 21:35:20 by khaimer           #+#    #+#             */
-/*   Updated: 2023/11/01 15:35:39 by khaimer          ###   ########.fr       */
+/*   Updated: 2023/11/01 23:14:18 by khaimer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ Fixed &Fixed::operator=(const Fixed &fixed)
     return (*this);
 }
 
-bool Fixed::operator>(const Fixed &second)
+bool Fixed::operator>(const Fixed &second) const
 {
     return this->Value > second.Value;
 }
@@ -158,21 +158,18 @@ Fixed Fixed::operator--(int)
     return tmp;
 }
 
-Fixed& Fixed::min(Fixed &a, Fixed &b) {
+Fixed &Fixed::min(Fixed &a, Fixed &b) {
     return (a < b) ? a : b;
 }
 
-// For const references, min returns a reference to the smallest value.
-const Fixed& Fixed::min(const Fixed &a, const Fixed &b) {
+const Fixed &Fixed::min(const Fixed &a, const Fixed &b) {
     return (a < b) ? a : b;
 }
 
-// For non-const references, max returns a reference to the greatest value.
-Fixed& Fixed::max(Fixed &a, Fixed &b) {
+Fixed &Fixed::max(Fixed &a, Fixed &b) {
     return (a > b) ? a : b;
 }
 
-// For const references, max returns a reference to the greatest value.
-const Fixed& Fixed::max(const Fixed &a, const Fixed &b) {
+const Fixed &Fixed::max(const Fixed &a, const Fixed &b) {
     return (a > b) ? a : b;
 }
