@@ -6,7 +6,7 @@
 /*   By: khaimer <khaimer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 21:35:23 by khaimer           #+#    #+#             */
-/*   Updated: 2023/10/31 21:35:52 by khaimer          ###   ########.fr       */
+/*   Updated: 2023/11/01 15:26:51 by khaimer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 #include <iostream>
 #include <math.h>
 
-class Fixed {
+class Fixed 
+{
     private:
         int Value;
         static const int Bits = 8;
@@ -33,12 +34,35 @@ class Fixed {
         float toFloat() const; //NEW
         int toInt() const; //NEW
 
-        friend std::ostream& operator<<(std::ostream &out, const Fixed &fixed); //overload
         
         void setRawBits(int const raw); //OLD
         int getRawBits() const; //OLD
         
         ~Fixed(); //OLD
+
+        bool operator>(const Fixed &second);
+        bool operator<(const Fixed &second) const;
+        bool operator>=(const Fixed &second) const;
+        bool operator<=(const Fixed &second) const;
+        bool operator==(const Fixed &second) const;
+        bool operator!=(const Fixed &second) const;
+
+        Fixed operator+(const Fixed &second) const;
+        Fixed operator-(const Fixed &second) const;
+        Fixed operator*(const Fixed &second) const;
+        Fixed operator/(const Fixed &second) const;
+
+        Fixed& operator++();  
+        Fixed operator++(int);
+        Fixed& operator--();  
+        Fixed operator--(int);
+
+        static Fixed& min(Fixed &a, Fixed &b);                         // Takes two references on fixed-point numbers
+        static const Fixed& min(const Fixed &a, const Fixed &b);       // Takes two references to constant fixed-point numbers
+        static Fixed& max(Fixed &a, Fixed &b);                         // Takes two references on fixed-point numbers
+        static const Fixed& max(const Fixed &a, const Fixed &b);
+
 };
+std::ostream& operator<<(std::ostream &out, const Fixed &fixed); //overload
 
 #endif

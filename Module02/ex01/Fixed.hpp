@@ -4,7 +4,8 @@
 #include <iostream>
 #include <math.h>
 
-class Fixed {
+class Fixed 
+{
     private:
         int Value;
         static const int Bits = 8;
@@ -21,12 +22,12 @@ class Fixed {
         float toFloat() const; //NEW
         int toInt() const; //NEW
 
-        friend std::ostream& operator<<(std::ostream &out, const Fixed &fixed); //overload
         
         void setRawBits(int const raw); //OLD
         int getRawBits() const; //OLD
         
         ~Fixed(); //OLD
 };
+std::ostream& operator<<(std::ostream &out, const Fixed &fixed); //overload
 
 #endif
