@@ -6,17 +6,18 @@
 /*   By: khaimer <khaimer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 21:27:30 by khaimer           #+#    #+#             */
-/*   Updated: 2023/11/18 05:14:15 by khaimer          ###   ########.fr       */
+/*   Updated: 2023/11/21 03:46:52 by khaimer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
 
-void    Animal::makeSound(void) const
-{
-    std::cout << "Animal Sound" << std::endl;
-}
+// void    Animal::makeSound(void) const
+// {
+//     std::cout << "Animal Sound" << std::endl;
+// }
+
 
 Animal::Animal() : type("Unknow")
 {

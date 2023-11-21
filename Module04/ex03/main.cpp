@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khaimer <khaimer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/20 03:13:43 by khaimer           #+#    #+#             */
-/*   Updated: 2023/11/20 04:15:53 by khaimer          ###   ########.fr       */
+/*   Created: 2023/11/21 05:24:59 by khaimer           #+#    #+#             */
+/*   Updated: 2023/11/21 06:15:08 by khaimer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#include <iostream>
+#include "Ice.hpp"
+#include "Cure.hpp"
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+int main() 
+{
+    Ice ice;
+    Cure cure;
 
-class Cat : public Animal {
-private:
-    Brain* brain;
+    std::cout << "Ice type: " << ice.getType() << std::endl;
+    std::cout << "Cure type: " << cure.getType() << std::endl;
 
-public:
-    Cat();
-    Cat(const std::string& Name);
-    Cat(const Cat& other);
-    Cat& operator=(const Cat& other);
-    ~Cat();
+    return 0;
+}
 
-    void makeSound() const;
-};
-
-#endif
