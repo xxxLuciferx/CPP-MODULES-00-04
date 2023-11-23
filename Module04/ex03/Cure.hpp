@@ -6,7 +6,7 @@
 /*   By: khaimer <khaimer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 05:11:11 by khaimer           #+#    #+#             */
-/*   Updated: 2023/11/21 06:13:20 by khaimer          ###   ########.fr       */
+/*   Updated: 2023/11/21 21:32:28 by khaimer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class Cure : public AMateria
 {
     public:
         Cure();
+        Cure(const std::string& name);
         Cure(const Cure& type);
         Cure& operator=(const Cure& type);
         

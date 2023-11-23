@@ -6,7 +6,7 @@
 /*   By: khaimer <khaimer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 05:14:37 by khaimer           #+#    #+#             */
-/*   Updated: 2023/11/21 05:17:20 by khaimer          ###   ########.fr       */
+/*   Updated: 2023/11/21 21:51:52 by khaimer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class Ice : public AMateria
 {
     public:
         Ice();
+        Ice(const std::string& name);
         Ice(const Ice& src);
         Ice& operator=(const Ice& src);
 

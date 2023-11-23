@@ -2,11 +2,11 @@ NAME = interface
 
 CC = c++
 
-CPPFLAGS = -Wall -Werror -Wextra -std=c++98
+CPPFLAGS = -Wall -Werror -Wextra -std=c++98 #-fsanitize=address -g
 
 RM = rm -rf
 
-SRCS = main.cpp AMateria.cpp Cure.cpp Ice.cpp
+SRCS = main.cpp AMateria.cpp Cure.cpp Ice.cpp Character.cpp MateriaSource.cpp
 
 OBJS = $(SRCS:%.cpp=%.o)
 

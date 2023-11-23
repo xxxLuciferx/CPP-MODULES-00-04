@@ -6,7 +6,7 @@
 /*   By: khaimer <khaimer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 06:08:46 by khaimer           #+#    #+#             */
-/*   Updated: 2023/11/21 06:13:30 by khaimer          ###   ########.fr       */
+/*   Updated: 2023/11/23 00:54:11 by khaimer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@
 Cure::Cure() : AMateria("cure") 
 {
     
+}
+
+Cure::Cure(const std::string& name) : AMateria("cure")
+{
+    std::cout << "parametrized Constructed a " << this->getType() << " named " << name << std::endl;
 }
 
 Cure::Cure(const Cure &type) : AMateria(type) 

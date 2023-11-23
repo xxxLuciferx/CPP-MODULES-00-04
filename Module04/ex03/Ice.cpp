@@ -6,7 +6,7 @@
 /*   By: khaimer <khaimer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 05:15:07 by khaimer           #+#    #+#             */
-/*   Updated: 2023/11/21 05:24:41 by khaimer          ###   ########.fr       */
+/*   Updated: 2023/11/21 21:52:24 by khaimer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@
 Ice::Ice() : AMateria("ice") 
 {
     
+}
+
+Ice::Ice(const std::string& name) : AMateria("ice") 
+{
+    std::cout << "parametrized Constructed a " << this->getType() << " named " << name << std::endl;
 }
 
 Ice::Ice(const Ice& src) : AMateria(src) 
@@ -38,7 +43,8 @@ Ice::~Ice()
     
 }
 
-AMateria* Ice::clone() const {
+AMateria* Ice::clone() const 
+{
     return new Ice(*this);
 }
 
