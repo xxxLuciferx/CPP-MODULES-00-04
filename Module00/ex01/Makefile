@@ -6,8 +6,8 @@ CPPFLAGS	=	-Wall -Werror -Wextra -std=c++98
 
 RM			=	rm -rf
 
-SRCS		=	Phonebook.cpp \
-				Contact.cpp \
+SRCS		=	phonebook.cpp \
+				contact.cpp \
 				main.cpp
 
 OBJS		=	$(SRCS:%.cpp=%.o)

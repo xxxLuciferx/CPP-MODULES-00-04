@@ -6,11 +6,11 @@
 /*   By: khaimer <khaimer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 11:00:02 by khaimer           #+#    #+#             */
-/*   Updated: 2023/10/11 01:43:12 by khaimer          ###   ########.fr       */
+/*   Updated: 2024/01/14 13:07:01 by khaimer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Phonebook.hpp"
+#include "phonebook.hpp"
 
 Phonebook::Phonebook()
 {
@@ -40,9 +40,7 @@ void Phonebook::setContact(Contact contact)
 {
     this->contacts[this->index] = contact;
     if (count < 8)
-	{
         count++;
-    }
     this->index = (this->index + 1) % 8;
 }
 

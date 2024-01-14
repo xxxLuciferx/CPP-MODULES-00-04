@@ -23,12 +23,12 @@ public:
 	std::string getSecret();
 	
 
-	void setFirstName(std::string name);
-	void setLastName(std::string name);
-	void setNickName(std::string name);
-	void setPhoneNumber(std::string number);
-	void setSecret(std::string secret);
-	
+		void setFirstName(std::string name);
+		void setLastName(std::string name);
+		void setNickName(std::string name);
+		void setPhoneNumber(std::string number);
+		void setSecret(std::string secret);
+		
 };
 
 #endif

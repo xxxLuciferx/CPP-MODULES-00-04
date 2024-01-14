@@ -6,12 +6,12 @@
 /*   By: khaimer <khaimer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 10:59:47 by khaimer           #+#    #+#             */
-/*   Updated: 2023/10/11 01:09:28 by khaimer          ###   ########.fr       */
+/*   Updated: 2024/01/14 13:11:34 by khaimer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "Phonebook.hpp"
+#include "phonebook.hpp"
 
 void newContact(Phonebook *phonebook)
 {
@@ -101,11 +101,9 @@ void searchContact(Phonebook *phonebook)
 		while (!(std::cin >> index) || index > count || index < 1)
 		{
 			if (std::cin.eof())
-			{
 				return;
-			}
 			std::cin.clear();
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //SOULD BE FIXEEED
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			std::cout << "Invalid input, Please enter an index between 1 and " << count << ": ";
 		}
 		index--;

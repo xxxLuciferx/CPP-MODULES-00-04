@@ -6,11 +6,11 @@
 /*   By: khaimer <khaimer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 10:59:34 by khaimer           #+#    #+#             */
-/*   Updated: 2023/10/06 15:21:39 by khaimer          ###   ########.fr       */
+/*   Updated: 2024/01/14 12:54:59 by khaimer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
+#include "contact.hpp"
 
 Contact::Contact()
 {
